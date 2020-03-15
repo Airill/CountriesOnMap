@@ -43,7 +43,6 @@ public class ClickDetector : MonoBehaviour
     }
 
     public void OnClick() {
-        Debug.Log("click");
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo)) {
@@ -57,7 +56,6 @@ public class ClickDetector : MonoBehaviour
     }
 
     public void OnHold() {
-        Debug.Log("Hold detected");
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo)) {

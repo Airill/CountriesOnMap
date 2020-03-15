@@ -16,7 +16,7 @@ public class InfoPanel : MonoBehaviour
 
     public void SetInfo(CountryOnMap country) {
         AreaText.text = "Площадь: " +country.area.ToString() + " км^2";
-        PopulationText.text = "Население: " + country.population.ToString() + " чел.";
+        PopulationText.text = "Население: " + country.population.ToString() + " тыс. чел.";
         VvpText.text = "ВВП: " + country.vvp.ToString() + " трлн. долл.";
     }
 

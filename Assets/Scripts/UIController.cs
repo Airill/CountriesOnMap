@@ -39,7 +39,9 @@ public class UIController : MonoBehaviour
             Destroy(c);
         }
         cells.Clear();
-        listOfCountriesPanel.SetActive(true);
+        //listOfCountriesPanel.SetActive(true);
+        OpenListAnimation();
+
         foreach (CountryOnMap sc in selectedCountries) {
             var copy = Instantiate(countryInList);
             cells.Add(copy);
@@ -49,8 +51,18 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void OpenListAnimation() {
+        Animator animator = listOfCountriesPanel.GetComponent<Animator>();
+        if (animator != null) {
+            bool isOpen = animator.GetBool("open");
+            animator.SetBool("open", !isOpen);
+        }
+    }
+
+
     public void BackButton() {
-        listOfCountriesPanel.SetActive(false);
+        OpenListAnimation();
+     //   listOfCountriesPanel.SetActive(false);
     }
 
     public void OnAreaSortButtonClick() {
