@@ -85,7 +85,6 @@ public class CountriesController : MonoBehaviour
 
         uIController.SetActiveButtons(false);
         uIController.selectedPanel.DisactivatePanel();
-       // uIController.infoPanel.ActivatePanel();
         SetCountriesToDefault();
     } 
 

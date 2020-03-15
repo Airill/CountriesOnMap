@@ -39,8 +39,8 @@ public class UIController : MonoBehaviour
             Destroy(c);
         }
         cells.Clear();
-        //listOfCountriesPanel.SetActive(true);
-        OpenListAnimation();
+        listOfCountriesPanel.SetActive(true);
+
 
         foreach (CountryOnMap sc in selectedCountries) {
             var copy = Instantiate(countryInList);
@@ -61,8 +61,8 @@ public class UIController : MonoBehaviour
 
 
     public void BackButton() {
-        OpenListAnimation();
-     //   listOfCountriesPanel.SetActive(false);
+       // OpenListAnimation();
+      listOfCountriesPanel.SetActive(false);
     }
 
     public void OnAreaSortButtonClick() {
