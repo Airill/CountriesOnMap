@@ -11,9 +11,6 @@ public class ClickDetector : MonoBehaviour
     float pressTime;
     bool isPressed = false;
 
-
-
-    // Update is called once per frame
     void Update() {
 
         if (isPressed) {
@@ -24,7 +21,6 @@ public class ClickDetector : MonoBehaviour
             //prevent click through UI
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
-
             isPressed = true;
         }
 
@@ -50,8 +46,6 @@ public class ClickDetector : MonoBehaviour
             if (countriesController.isSelecting == false) {
                 countriesController.ActivateCountry(chosenCountry);
             } else { countriesController.SelectCountry(chosenCountry); }
-
-            
         }
     }
 
@@ -60,7 +54,6 @@ public class ClickDetector : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo)) {
             CountryOnMap chosenCountry = hitInfo.transform.GetComponentInParent<CountriesController>().GetCountry(hitInfo.collider.gameObject);
-           /// countriesController.ChangeSelectingStatus(true);
             countriesController.SelectCountry(chosenCountry);
         }
     }

@@ -6,18 +6,16 @@ public class CountriesController : MonoBehaviour
 {
     public UIController uIController;
     public List<CountryOnMap> countries;
-   // public List<CountryOnMap> countries;
-
     private GameObject lastChosenAttaction;
     private GameObject lastChosenMarker;
+    private List<CountryOnMap> selectedCountries = new List<CountryOnMap>();
     [HideInInspector]
     public bool isSelecting;
-    private List<CountryOnMap> selectedCountries = new List<CountryOnMap>();
+
 
     public CountryOnMap GetCountry(GameObject mark) {
         foreach (CountryOnMap c in countries) {
             if(c.marker == mark) {
-             //   ShowCountryAttraction(countries[i]);
                 return c;
              }
         }
@@ -35,7 +33,6 @@ public class CountriesController : MonoBehaviour
     public void ShowCountryAttraction(CountryOnMap aCountry) { //использовать для селекта?
                 lastChosenAttaction = aCountry.attraction;
                 lastChosenAttaction.SetActive(true);
-        
     }
 
     public void SetLastCountry() {
@@ -82,7 +79,6 @@ public class CountriesController : MonoBehaviour
     public void EndSelection() {
         selectedCountries.Clear();
         ChangeSelectingStatus(false);
-
         uIController.SetActiveButtons(false);
         uIController.selectedPanel.DisactivatePanel();
         SetCountriesToDefault();

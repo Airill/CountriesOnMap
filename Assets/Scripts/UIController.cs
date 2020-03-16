@@ -25,7 +25,7 @@ public class UIController : MonoBehaviour
     bool vvpSortAscending = true;
 
     private void Start() {
-        countriesController =  GameObject.FindGameObjectWithTag("GameController").GetComponent<CountriesController>();
+        countriesController = GameObject.FindGameObjectWithTag("GameController").GetComponent<CountriesController>();
     }
 
     

@@ -4156,7 +4156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.01
   perspectiveZoomSpeed: 0.01
-  camera: {fileID: 963194227}
+  _camera: {fileID: 963194227}
   minZoom: 0.5
   maxZoom: 10
   minX: -20
